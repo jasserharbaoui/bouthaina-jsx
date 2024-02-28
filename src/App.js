@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import Card from 'react-bootstrap/Card';
 import './App.css';
+import Description from './components/description';
+import Name from './components/name';
+import Image from './components/image';
+import Price from "./components/price";
 
 function App() {
+
+  let username ="iphone"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{justifyContent:"center"}}>
+      <Card style={{ width: '18rem' }}>
+     <Image/>
+      <Card.Body>
+        <Card.Title style={{color:"green"}}>
+          <Name/>
+        </Card.Title>
+        <Card.Text style={{fontSize:"30px"}}>
+          <Description/>
+        </Card.Text>
+        <Card.Title>
+          <Price/>
+        </Card.Title>
+      </Card.Body>
+    </Card>
+
+    <h1 style={{color:"green",justifyContent:"center",fontSize:"25px"}}>{(username)? `this product ${username}` : "this product , not exist"}</h1>
+    {username && <img class="img" src="https://tse2.mm.bing.net/th?id=OIP.a1TEn61BLm907eoY32TjAAHaHa&pid=Api&P=0&h=180" alt='not found' style={{width:"100px"}}/>}
     </div>
+    
+   
   );
 }
-
+ 
 export default App;
